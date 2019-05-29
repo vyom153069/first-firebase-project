@@ -9,11 +9,28 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.firebase.client.Firebase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.DateFormat;
+import java.util.Date;
+
+import vyomchandra.com.firebasecompleteproject.modal.Data;
 
 public class HomeActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private FloatingActionButton floatingActionButton;
     private RecyclerView recyclerView;
+
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +47,14 @@ public class HomeActivity extends AppCompatActivity {
         layoutManager.setReverseLayout(true);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
+
+        //firebase
+        mAuth=FirebaseAuth.getInstance();
+
+        FirebaseUser mUser=mAuth.getCurrentUser();
+        String uid=mUser.getUid();
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("AllData").child(uid);
+
 
         //floating button
         floatingActionButton=findViewById(R.id.flotingbtn);
@@ -49,6 +74,29 @@ public class HomeActivity extends AppCompatActivity {
         View myview=inflater.inflate(R.layout.inputlayout,null);
         mydialoge.setView(myview);
         AlertDialog dialog=mydialoge.create();
+
+        final EditText mTitle=myview.findViewById(R.id.title);
+        final EditText mDescription=myview.findViewById(R.id.description);
+        final EditText mBudget=myview.findViewById(R.id.budget);
+        final Button mSave=myview.findViewById(R.id.save);
+        mSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String title=mTitle.getText().toString().trim();
+                String description=mDescription.getText().toString().trim();
+                String budget=mBudget.getText().toString().trim();
+
+                String mDate= DateFormat.getDateInstance().format(new Date());
+                String id=mDatabase.push().getKey();
+
+                Data data=new Data(title,description,id,budget,mDate);
+                mDatabase.child(id).setValue(data);
+
+                Toast.makeText(HomeActivity.this, "Data inserted", Toast.LENGTH_SHORT).show();
+
+            }
+        });
         dialog.show();
 
     }

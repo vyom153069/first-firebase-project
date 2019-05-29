@@ -32,8 +32,11 @@
         android:background="@drawable/background"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:id="@+id/email_signup"
-        android:layout_margin="20dp"
-        android:ems="10"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -42,13 +45,18 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textColor="#000"
         android:background="@drawable/background"
-        android:layout_margin="20dp"
-        android:id="@+id/password_signup"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/password_signup"
+        android:inputType="textPassword"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:layout_margin="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:id="@+id/sign_up_in"
         android:background="@drawable/background"/>
     <TextView
@@ -56,6 +64,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:text="------OR------"
+        android:layout_marginTop="10dp"
         android:textColor="#fff"
         android:layout_gravity="center"
         android:gravity="center"/>

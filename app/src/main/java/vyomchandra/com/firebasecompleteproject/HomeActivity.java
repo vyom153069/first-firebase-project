@@ -73,7 +73,7 @@ public class HomeActivity extends AppCompatActivity {
         LayoutInflater inflater=LayoutInflater.from(this);
         View myview=inflater.inflate(R.layout.inputlayout,null);
         mydialoge.setView(myview);
-        AlertDialog dialog=mydialoge.create();
+        final AlertDialog dialog=mydialoge.create();
 
         final EditText mTitle=myview.findViewById(R.id.title);
         final EditText mDescription=myview.findViewById(R.id.description);
@@ -94,7 +94,7 @@ public class HomeActivity extends AppCompatActivity {
                 mDatabase.child(id).setValue(data);
 
                 Toast.makeText(HomeActivity.this, "Data inserted", Toast.LENGTH_SHORT).show();
-
+                dialog.dismiss();
             }
         });
         dialog.show();

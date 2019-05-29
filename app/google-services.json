@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "250865016571",
+    "firebase_url": "https://first-firebase-project-48c89.firebaseio.com",
+    "project_id": "first-firebase-project-48c89",
+    "storage_bucket": "first-firebase-project-48c89.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250865016571:android:3d03df468b98b7b3",
+        "android_client_info": {
+          "package_name": "vyomchandra.com.firebasecompleteproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "250865016571-v6qr8b47t6un8snuomv60ro926640ru9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE3US1xw2gW4eJIhmlwAlkuaLhdrwGu2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "250865016571-v6qr8b47t6un8snuomv60ro926640ru9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

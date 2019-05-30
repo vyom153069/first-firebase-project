@@ -34,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
         signup=findViewById(R.id.sign_up);
         signin=findViewById(R.id.sign_in);
         firebaseAuth=FirebaseAuth.getInstance();
+
+       if(firebaseAuth.getCurrentUser()!=null)
+        {
+            startActivity(new Intent(this,HomeActivity.class));
+        }
         progressDialog=new ProgressDialog(MainActivity.this);
 
 

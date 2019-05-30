@@ -68,6 +68,8 @@ public class HomeActivity extends AppCompatActivity {
 
 
     }
+
+
     public void addData(){
         AlertDialog.Builder mydialoge=new AlertDialog.Builder(this);
         LayoutInflater inflater=LayoutInflater.from(this);

@@ -135,7 +135,7 @@ public class HomeActivity extends AppCompatActivity {
                      Title=model.getTitle();
                      Description=model.getDescription();
                      Budget=model.getBudget();
-
+                     updateData();
                     }
                 });
             }
@@ -158,7 +158,7 @@ View myView;
         }
         public void setbudget(String Budget){
             TextView mBudget=myView.findViewById(R.id.budget_item);
-            mBudget.setText("$"+Budget);
+            mBudget.setText("Rs "+Budget);
         }
         public void setDate(String Date){
             TextView mDate=myView.findViewById(R.id.date_item);

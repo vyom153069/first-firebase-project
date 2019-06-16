@@ -203,6 +203,7 @@ View myView;
         mDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mDatabase.child(post_key).removeValue();
                 dialog.dismiss();
             }
         });

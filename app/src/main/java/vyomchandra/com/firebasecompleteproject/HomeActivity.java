@@ -199,7 +199,7 @@ View myView;
                 Budget=mBudget.getText().toString().trim();
                 String mDate=DateFormat.getDateInstance().format(new Date());
 
-                Data data=new Data(Title,Description,Budget,post_key,mDate);
+                Data data=new Data(Title,Description,post_key,Budget,mDate);
                 mDatabase.child(post_key).setValue(data);
                 dialog.dismiss();
             }

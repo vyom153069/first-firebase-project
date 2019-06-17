@@ -254,6 +254,8 @@ View myView;
             case R.id.credits:
                 startActivity(new Intent(this,credits.class));
                 break;
+            case R.id.shareItem:
+
         }
         return super.onOptionsItemSelected(item);
     }

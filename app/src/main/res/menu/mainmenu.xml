@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<item android:id="@+id/logout"
-    android:title="Log out"
-    app:showAsAction="always"
-    android:icon="@drawable/logout"></item>
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/logout"
+        android:title="Log out"
+        app:showAsAction="always"></item>
 
-    <item android:id="@+id/credits"
+    <item
+        android:id="@+id/credits"
         android:title="About"
-        app:showAsAction="collapseActionView"></item>
+        app:showAsAction="collapseActionView"
+        android:icon="@drawable/about"></item>
+
+    <item android:id="@+id/shareItem"
+        android:title="Share"
+       android:icon="@drawable/share" ></item>
+
+
 </menu>

@@ -7,21 +7,15 @@
     tools:context=".signup"
     android:orientation="vertical"
     android:background="#000">
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:src="@drawable/logo"
-        android:layout_margin="20dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:text="Sign Up"
+        android:text="Register"
         android:textSize="50dp"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="110dp"
         android:textColor="#fff"/>
     <EditText
         android:layout_width="match_parent"
@@ -66,7 +60,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
+        android:text="register"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"

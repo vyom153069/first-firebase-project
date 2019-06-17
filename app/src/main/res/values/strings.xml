@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Firebase Complete Project</string>
+    <string name="about"> <u>About</u> </string>
+    <string name="suggestion"> <u>Suggestions</u> </string>
 </resources>

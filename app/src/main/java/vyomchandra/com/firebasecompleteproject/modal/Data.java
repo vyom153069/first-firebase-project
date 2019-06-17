@@ -1,7 +1,7 @@
 package vyomchandra.com.firebasecompleteproject.modal;
 
 public class Data {
-    String title,description,id,budget,data;
+    private static String title,description,id,budget,data;
     Data(){
 
     }

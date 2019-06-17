@@ -35,6 +35,8 @@ public class signup extends AppCompatActivity {
 
 
 
+
+
         firebaseAuth= FirebaseAuth.getInstance();
         progressDialog=new ProgressDialog(this);
 
@@ -59,7 +61,7 @@ public class signup extends AppCompatActivity {
                    pass.setError("required");
                    return;
                }
-               if(pass.getText()!=confirm.getText()){
+               if(!pass.getText().toString().trim().equals(confirm.getText().toString().trim())){
                    confirm.setError("Wrong");
                    return;
                }
@@ -74,8 +76,8 @@ public class signup extends AppCompatActivity {
                           progressDialog.dismiss();
 
                       }else{
-                          Toast.makeText(signup.this, "registration error", Toast.LENGTH_SHORT).show();
-
+                          Toast.makeText(signup.this, "User Exist", Toast.LENGTH_SHORT).show();
+                          progressDialog.dismiss();
                       }
                    }
                });

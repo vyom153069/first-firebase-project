@@ -1,5 +1,6 @@
 package vyomchandra.com.firebasecompleteproject;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -151,6 +152,7 @@ View myView;
         }
         public void setTitle(String title){
             TextView mTitle=myView.findViewById(R.id.title_item);
+
             mTitle.setText(title);
         }
         public void setDescription(String Description){
@@ -159,7 +161,7 @@ View myView;
         }
         public void setbudget(String Budget){
             TextView mBudget=myView.findViewById(R.id.budget_item);
-            mBudget.setText("Rs "+Budget);
+            mBudget.setText("₹ "+Budget);
         }
         public void setDate(String Date){
             TextView mDate=myView.findViewById(R.id.date_item);

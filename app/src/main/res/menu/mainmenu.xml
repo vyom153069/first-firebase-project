@@ -7,6 +7,6 @@
     android:icon="@drawable/logout"></item>
 
     <item android:id="@+id/credits"
-        android:title="Credits"
+        android:title="About"
         app:showAsAction="collapseActionView"></item>
 </menu>

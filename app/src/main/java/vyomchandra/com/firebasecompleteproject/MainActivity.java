@@ -2,6 +2,7 @@ package vyomchandra.com.firebasecompleteproject;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -52,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String emails=email.getText().toString().trim();
-                String passs=pass.getText().toString().trim();
+                final String emails=email.getText().toString().trim();
+                final String passs=pass.getText().toString().trim();
                 if(TextUtils.isEmpty(emails)){
                     email.setError("required");
                     return;
@@ -76,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
                            progressDialog.dismiss();
                        }else
                        {
+                           progressDialog.dismiss();
+
+
                            Toast.makeText(MainActivity.this, "Please register first", Toast.LENGTH_SHORT).show();
                        }
                     }
@@ -87,6 +91,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finish();
-        System.exit(0);
+
     }
 }

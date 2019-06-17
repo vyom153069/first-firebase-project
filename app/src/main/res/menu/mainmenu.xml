@@ -5,4 +5,8 @@
     android:title="Log out"
     app:showAsAction="always"
     android:icon="@drawable/logout"></item>
+
+    <item android:id="@+id/credits"
+        android:title="Credits"
+        app:showAsAction="collapseActionView"></item>
 </menu>

@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class signup extends AppCompatActivity {
 
-    private EditText email,pass;
+    private EditText email,pass,confirm;
     private Button signin,signup;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
@@ -31,6 +31,8 @@ public class signup extends AppCompatActivity {
        signin=findViewById(R.id.sign_in);
        email=findViewById(R.id.email_signup);
        pass=findViewById(R.id.password_signup);
+       confirm=findViewById(R.id.confirm_password);
+
 
 
         firebaseAuth= FirebaseAuth.getInstance();
@@ -55,6 +57,10 @@ public class signup extends AppCompatActivity {
                }
                if(TextUtils.isEmpty(passs)){
                    pass.setError("required");
+                   return;
+               }
+               if(pass.getText()!=confirm.getText()){
+                   confirm.setError("Wrong");
                    return;
                }
                progressDialog.setMessage("processing...");

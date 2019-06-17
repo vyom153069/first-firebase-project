@@ -1,5 +1,6 @@
 package vyomchandra.com.firebasecompleteproject;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -223,8 +224,33 @@ View myView;
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.logout:
-                mAuth.signOut();
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
+                AlertDialog.Builder builder=new AlertDialog.Builder(HomeActivity.this);
+                builder.setMessage("Do you really want to close this application?");
+                builder.setCancelable(false);
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        mAuth.signOut();
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                AlertDialog alert=builder.create();
+                alert.setTitle("Exit");
+                alert.show();
+
+                //mAuth.signOut();
+                //startActivity(new Intent(getApplicationContext(),MainActivity.class));
+               // finish();
+                break;
+            case R.id.credits:
+                startActivity(new Intent(this,credits.class));
                 break;
         }
         return super.onOptionsItemSelected(item);
